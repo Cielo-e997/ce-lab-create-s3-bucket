@@ -1,15 +1,23 @@
-# S3 Bucket Lab
+# Create S3 Bucket Lab - Solution
 
-## Bucket Information
-
-Bucket name: cielo-demo-2026  
-Region: eu-central-1  
+**Student Name:** Cielo Escobar  
+**Date:** 2026  
 
 ---
 
-## Objects Uploaded
+## Exercise 1: Bucket Creation
 
-Multiple objects were uploaded including:
+**Bucket Name:** cielo-demo-2026  
+**Region:** eu-central-1  
+
+![Bucket Created](screenshots/bucket-created.png)
+
+---
+
+## Exercise 2: Object Uploads
+
+### Files Uploaded:
+Total objects uploaded: 5
 
 - README.txt (text file)
 - resume.pdf (document)
@@ -17,58 +25,85 @@ Multiple objects were uploaded including:
 - cli-test.txt (CLI upload)
 - version-test.txt (versioning test)
 
-Folders created:
+### Folder Structure:
+![Folder Structure](screenshots/folder-structure.png)
 
+**Folders Created:**
 - images/
 - documents/
 - backups/
-- project/
+
+![Files Uploaded](screenshots/files-uploaded.png)
 
 ---
 
-## Storage Classes
+## Exercise 3: Storage Classes
 
-The following storage classes were used:
+![Storage Classes](screenshots/storage-classes.png)
 
+**Storage Classes Used:**
 - Standard
 - Standard-IA
 - Intelligent-Tiering
 
 ---
 
-## Versioning
+## Exercise 4: Bucket Features
 
-Versioning was enabled on the bucket.
+### Versioning:
+![Versioning Enabled](screenshots/versioning-enabled.png)
+![Versions List](screenshots/versions.png)
 
-A file (version-test.txt) was uploaded twice with different content, and multiple versions were successfully created.
+**Number of versions created:** 2
 
----
+### Encryption:
+![Encryption Enabled](screenshots/encryption-enabled.png)
 
-## Encryption
+**Encryption type:** SSE-S3
 
-Default encryption was enabled using:
+### Tags:
+![Tags](screenshots/tags.png)
 
-- SSE-S3 (Amazon S3 managed keys)
-
----
-
-## Tags
-
-The following tags were added:
-
+**Tags Added:**
 - Environment: Development
 - Project: Bootcamp
 
 ---
 
-## CLI Operations
+## Exercise 5: Download/Delete
 
-The following CLI operations were performed:
+**Operations Completed:**
+- Downloaded object via CLI
+- Deleted object via CLI
+- Deleted folder via CLI
 
-- Uploading files to S3
-- Listing bucket contents
-- Downloading objects
-- Deleting objects
-- Syncing local directories with S3
+---
 
-All CLI outputs are documented in cli-outputs.txt
+## Exercise 6: Sync Operations
+
+![Synced Files](screenshots/synced-files.png)
+
+**Sync actions performed:**
+- Synced local directory to S3 bucket
+- Verified uploaded files
+- Re-synced after modifying a file
+
+---
+
+## Exercise 7: Metrics
+
+![Bucket Metrics](screenshots/bucket-metrics.png)
+
+---
+
+## CLI Outputs
+
+### CLI Operations Performed:
+
+- Uploaded files using `aws s3 cp`
+- Listed bucket contents using `aws s3 ls`
+- Downloaded objects from S3
+- Deleted objects and folders
+- Synced local directory using `aws s3 sync`
+
+All detailed command outputs are available in `cli-outputs.txt`.

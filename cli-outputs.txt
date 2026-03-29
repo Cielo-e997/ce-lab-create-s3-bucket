@@ -1,13 +1,17 @@
-# CLI Upload and List
+# CLI Outputs
+
+## Upload and List
 
 aws s3 cp cli-test.txt s3://cielo-demo-2026/
-upload: ./cli-test.txt to s3://cielo-demo-2026/cli-test.txt      
+upload: ./cli-test.txt to s3://cielo-demo-2026/cli-test.txt
 
 aws s3 cp cli-test.txt s3://cielo-demo-2026/backups/
 upload: ./cli-test.txt to s3://cielo-demo-2026/backups/cli-test.txt
 
 aws s3 ls s3://cielo-demo-2026/
                            PRE backups/
+                           PRE documents/
+                           PRE images/
 2026-03-26 17:30:36         12 README.txt
 2026-03-26 17:31:46         16 cli-test.txt
 2026-03-26 17:30:35     150982 logo.jpg
@@ -15,7 +19,10 @@ aws s3 ls s3://cielo-demo-2026/
 
 aws s3 ls s3://cielo-demo-2026/backups/
 2026-03-26 17:32:02         16 cli-test.txt
-# Download and Delete
+
+---
+
+## Download and Delete
 
 aws s3 cp s3://cielo-demo-2026/cli-test.txt ./downloads/
 download: s3://cielo-demo-2026/cli-test.txt to downloads/cli-test.txt
@@ -27,3 +34,15 @@ delete: s3://cielo-demo-2026/cli-test.txt
 
 aws s3 rm s3://cielo-demo-2026/backups/ --recursive
 delete: s3://cielo-demo-2026/backups/cli-test.txt
+
+---
+
+## Sync Operations
+
+aws s3 sync local-project/ s3://cielo-demo-2026/project/
+upload: local-project/src/app.js to s3://cielo-demo-2026/project/src/app.js
+
+aws s3 ls s3://cielo-demo-2026/project/ --recursive
+
+aws s3 sync local-project/ s3://cielo-demo-2026/project/
+upload: local-project/src/app.js to s3://cielo-demo-2026/project/src/app.js
